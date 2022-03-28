@@ -24,7 +24,7 @@ pipeline {
         				echo "vendor not running"
         			}
         			finally{
-        					bat "start "api" java -jar target/api-jenkin-0.0.1-SNAPSHOT.jar"
+        					bat "start 'api' java -jar target/api-jenkin-0.0.1-SNAPSHOT.jar"
         			}
         		}
         	}
