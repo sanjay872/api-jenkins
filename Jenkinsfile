@@ -15,15 +15,17 @@ pipeline {
         }
         
         stage('run app'){
-        	script {
-        		try{
-        			bat "taskkill /FI 'WindowTitle eq api*' /T /F"	
-        		}
-        		catch(error){
-        			echo "vendor not running"
-        		}
-        		finally{
-        				bat "start "api" java -jar target/api-jenkin-0.0.1-SNAPSHOT.jar"
+        	steps {
+        		script {
+        			try{
+        				bat "taskkill /FI 'WindowTitle eq api*' /T /F"	
+        			}
+        			catch(error){
+        				echo "vendor not running"
+        			}
+        			finally{
+        					bat "start "api" java -jar target/api-jenkin-0.0.1-SNAPSHOT.jar"
+        			}
         		}
         	}
         }
