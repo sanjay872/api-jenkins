@@ -17,7 +17,7 @@ pipeline {
         stage('run app'){
         	script {
         		try{
-        			bat "taskkill /FI "WindowTitle eq api*" /T /F"	
+        			bat "taskkill /FI 'WindowTitle eq api*' /T /F"	
         		}
         		catch(error){
         			echo "vendor not running"
